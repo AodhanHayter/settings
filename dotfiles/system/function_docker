@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+
+# Call randomness and run docker-compose
+
+function dcr() {
+   echo "DCR'in $@"
+   randomness
+   docker-compose up --build $@
+}
+
+

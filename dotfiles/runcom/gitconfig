@@ -1,0 +1,55 @@
+[user]
+	email = aodhan.hayter@gmail.com
+	name = Aodhan Hayter
+	signingkey = 3FBACD0B82D05567FC1BB765FD58CC579E91D1C5
+[github]
+  user = AodhanHayter
+[alias]
+  prune = fetch --prune
+  undo = reset --soft HEAD^
+  stash-all = stash save --include-untracked
+  glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+[commit]
+  verbose = true
+  gpgSign = true
+[push]
+  default = simple
+  followTags = true
+[core]
+	editor = vim
+	excludesfile = /Users/Aodhan/.global_ignore
+[log]
+  date = relative
+[help]
+  autocorrect = 1
+[column]
+  ui = auto
+[color]
+	ui = true
+[color]
+  pager = true
+  ui = auto
+  status = auto
+  diff = auto
+  branch = auto
+  showBranch = auto
+  interactive = auto
+  grep = auto
+[url "https://"]
+	insteadOf = git://
+[diff]
+	tool = vimdiff
+[merge]
+  conflictstyle = diff3
+	tool = vimdiff
+[commit]
+  gpgSign = true
+[push]
+  default = simple
+  followTags = true
+[status]
+  showUntrackedFiles = all
+[transfer]
+  fsckobjects = true
+[gpg]
+	program = gpg

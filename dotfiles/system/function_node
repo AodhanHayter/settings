@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+
+# Get path to currently active version of node managed by nvm
+
+function get_nvm_bin() {
+  local version=$(nvm current)
+  echo "$NVM_DIR/versions/node/$version"
+}

@@ -1,0 +1,19 @@
+#!/usr/bin/env zsh
+
+# Exports environment variables defined in a .env or .localenv file
+
+function setenv() {
+  if [ -f .env ]; then
+    export $(cat .env | xargs)
+  fi
+  if [ -f .localenv ]; then
+    export $(cat .localenv | xargs)
+  fi
+}
+
+# Generate random characters and export it
+
+function randomness() {
+  export RANDOMNESS=$(openssl rand -base64 10)
+}
+

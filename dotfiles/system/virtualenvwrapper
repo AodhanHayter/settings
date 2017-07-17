@@ -1,0 +1,5 @@
+#!/usr/bin/env zsh
+
+# Load virtualenvwrapper into shell session
+[[ -s "/usr/local/bin/virtualenvwrapper_lazy.sh" ]] && source "/usr/local/bin/virtualenvwrapper_lazy.sh"
+

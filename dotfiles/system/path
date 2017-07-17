@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+
+# Setup path
+path=(
+$HOME/.{yarn,rvm}/bin
+/usr/local/{bin,sbin}
+$path
+)
+
+# Ensure path arrays do not contain duplicates
+typeset -gU cdpath fpath mailpath path
+
