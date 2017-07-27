@@ -17,3 +17,14 @@ function randomness() {
   export RANDOMNESS=$(openssl rand -base64 10)
 }
 
+function mux_portal() {
+  local PORTAL_DIR=$HOME/Documents/Development/perfectPitch/portal
+
+  tmux start-server
+  tmux new-session -d -c $PORTAL_DIR -s portal -n web
+  tmux new-window -t portal:1 -c $PORTAL_DIR -n server
+
+  tmux select-window -t portal:0
+  tmux attach-session -t portal
+}
+
