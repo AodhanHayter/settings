@@ -1,9 +1,5 @@
 #!/usr/bin/env zsh
 
-# Put prompt info on new line
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
-
 # Add new line after prompt print loop
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 

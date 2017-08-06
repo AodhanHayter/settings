@@ -1,8 +1,27 @@
 #!/usr/bin/env zsh
 
-# Setup NVM directory
-export NVM_DIR="$HOME/.nvm"
+# Lazy load nvm when used
+nvm() {
+  unset -f nvm
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+  nvm "$@"
+}
 
-# Load nvm into shell session as function
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+# Load nvm when a node related tool is being used
+node() {
+  unset -f node
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+  node "$@"
+}
 
+npm() {
+  unset -f npm
+  [ -s "$nvm_dir/nvm.sh" ] && . "$nvm_dir/nvm.sh"  # this loads nvm
+  npm "$@"
+}
+
+yarn() {
+  unset -f yarn
+  [ -s "$nvm_dir/nvm.sh" ] && . "$nvm_dir/nvm.sh"  # this loads nvm
+  yarn "$@"
+}

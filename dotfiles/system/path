@@ -2,7 +2,7 @@
 
 # Setup path
 path=(
-$HOME/.{yarn,rvm}/bin
+$HOME/.yarn/bin
 /usr/local/{bin,sbin}
 $path
 )
