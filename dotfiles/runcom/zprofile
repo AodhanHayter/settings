@@ -1,0 +1,22 @@
+#!/usr/bin/env zsh
+
+# Resolve DOTFILES_DIR
+# (assuming ~/settings/dotfiles on distros without readlink and/or $BASH_SOURCE/$0)
+
+READLINK=$(which greadlink || which readlink)
+CURRENT_SCRIPT=${(%):-%x}
+
+if [[ -n $CURRENT_SCRIPT && -x "$READLINK" ]]; then
+  SCRIPT_PATH=$($READLINK -f "$CURRENT_SCRIPT")
+  DOTFILES_DIR=$(dirname "$(dirname "$SCRIPT_PATH")")
+elif [ -d "$HOME/settings/dotfiles" ]; then
+  DOTFILES_DIR="$HOME/settings/dotfiles"
+else
+  echo "Unable to find dotfiles, exiting."
+  return
+fi
+
+. "$DOTFILES_DIR"/system/path
+
+
+export PATH="$HOME/.cargo/bin:$PATH"

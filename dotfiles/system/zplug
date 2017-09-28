@@ -13,12 +13,14 @@ zstyle ':prezto:module:syntax-highlighting' styles \
 	  'commandseparator' 'fg=green'
 
 # Source zplug
-source $HOME/.zplug/init.zsh
+source $ZPLUG_HOME/init.zsh
 
 zplug "modules/environment", from:prezto, defer:0
 
+zplug "mafredri/zsh-async", from:github, use:async.zsh
+
 # prompt
-zplug "bhilburn/powerlevel9k", at:zsh-async-integration, use:powerlevel9k.zsh-theme
+zplug "sindresorhus/pure",  from:github, use:pure.zsh, as:theme
 
 
 zplug "modules/directory", from:prezto

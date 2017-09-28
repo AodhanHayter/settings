@@ -20,6 +20,9 @@ export NVM_DIR="$HOME/.nvm"
 ## virtualenvwrapper
 export WORKON_HOME="$HOME/Documents/Development/venvs"
 
+# zplug
+export ZPLUG_HOME=/usr/local/opt/zplug
+
 # Browser
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
