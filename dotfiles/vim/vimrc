@@ -1,0 +1,213 @@
+" Basic Settings
+""""""""""""""""
+filetype on
+filetype plugin on
+filetype indent on
+scriptencoding utf-8
+syntax on
+
+let python_highlight_all=1
+set term=xterm-256color
+set encoding=utf-8
+set clipboard=unnamed
+set backupcopy=yes
+set colorcolumn=100
+set number
+set relativenumber
+set noshowmode
+set nocompatible
+set laststatus=2
+set path+=**
+set tags=tags;
+set wildmenu
+set backspace=indent,eol,start
+set nowrap
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set smartindent
+set autoindent
+set hidden
+
+set updatetime=250
+set timeoutlen=1000
+set ttimeoutlen=10
+set history=100
+
+set hlsearch " search highlight found words
+set showmatch " show matching parens
+
+" leader maps
+""""""""""""""
+let mapleader=" "
+map <leader>s :source ~/.vim/vimrc<CR>
+map <leader>co :set cursorcolumn!<CR>
+
+" use escape to remove highlight from search
+""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
+nnoremap <esc>^[ <esc>^[
+
+" autocmds
+""""""""""
+autocmd BufWritePre * :%s/\s\+$//e " remove whitespaces on save
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
+
+" Vim Plug
+""""""""""
+call plug#begin('~/settings/dotfiles/vim/plugs')
+
+Plug 'scrooloose/nerdtree'
+Plug 'w0rp/ale'
+Plug 'maralla/completor.vim'
+Plug 'itchyny/lightline.vim'
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-commentary'
+Plug 'pangloss/vim-javascript'
+Plug 'elixir-editors/vim-elixir'
+Plug 'rust-lang/rust.vim'
+Plug 'cohama/lexima.vim'
+Plug 'craigemery/vim-autotag'
+Plug 'Traap/vim-dragvisuals'
+Plug 'ElmCast/elm-vim'
+Plug 'trevordmiller/nova-vim'
+
+call plug#end()
+
+" theme
+"""""""
+colorscheme nova
+
+" elm-vim
+"""""
+let g:elm_format_autosave=1
+
+" Easy Align
+""""""""""""
+
+"Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+"Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+
+" fzf
+"""""
+" searches only files tracked by git
+map <leader>t :GitFiles<CR>
+" searches all files
+map <leader>ta :Files<CR>
+" Shows file preview
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
+" auto-tags
+let g:autotagTagsFile='tags'
+
+" Completer
+"""""""""""
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
+
+" ALE
+"""""
+let g:ale_linters = {
+      \ 'javascript': ['eslint'],
+      \ 'elixir': ['credo'],
+      \ 'python': ['flake8'],
+      \ 'elm': ['elm-make']
+      \}
+
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
+
+" nerd-tree
+"""""""""""
+map <leader>ff :NERDTreeFind<CR>
+map <C-\> :NERDTreeToggle<CR>
+let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp', '\.pyc', '__pycache__']
+
+" dravisual settings
+""""""""""""""""""""
+vmap  <expr>  <LEFT>   DVB_Drag('left')
+vmap  <expr>  <RIGHT>  DVB_Drag('right')
+vmap  <expr>  <DOWN>   DVB_Drag('down')
+vmap  <expr>  <UP>     DVB_Drag('up')
+vmap  <expr>  D        DVB_Duplicate()
+
+" remove any introduced trailing whitespace after moving
+let g:DVB_TrimWS = 1
+
+" lightline setup
+"""""""""""""""""
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'filename', 'fugitive' ] ]
+      \ },
+      \ 'component_function': {
+      \   'fugitive': 'LightLineFugitive',
+      \   'readonly': 'LightLineReadonly',
+      \   'modified': 'LightLineModified',
+      \   'filename': 'LightLineFilename'
+      \ },
+      \ 'separator': { 'left': '⮀', 'right': '⮂' },
+      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+      \ }
+
+
+function! LightLineModified()
+  if &filetype == "help"
+    return ""
+  elseif &modified
+    return "+"
+  elseif &modifiable
+    return ""
+  else
+    return ""
+  endif
+endfunction
+
+function! LightLineReadonly()
+  if &filetype == "help"
+    return ""
+  elseif &readonly
+    return "⭤"
+  else
+    return ""
+  endif
+endfunction
+
+function! LightLineFugitive()
+  if exists("*fugitive#head")
+    let branch = fugitive#head()
+    return branch !=# '' ? '⭠ '.branch : ''
+  endif
+  return ''
+endfunction
+
+function! LightLineFilename()
+  let nr = bufnr('')
+  return nr . ':' . ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+    \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
+    \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+endfunction
+
+" python with virtualenv support
+py << EOF
+import os
+
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
+
+

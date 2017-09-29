@@ -28,7 +28,7 @@ fi
 
 # Source dotfiles (order matters)
 POWERLEVEL9K_ALWAYS_SHOW_CONTEXT=false
-for DOTFILE in "$DOTFILES_DIR"/system/{function,function_*,path,env,prompt,nvm,rvm,zplug,alias}; do
+for DOTFILE in "$DOTFILES_DIR"/system/{function,function_*,env,prompt,nvm,rvm,zplug,alias}; do
   [ -f "$DOTFILE" ] && . "$DOTFILE"
 done
 
@@ -38,3 +38,5 @@ unset READLINK CURRENT_SCRIPT SCRIPT_PATH DOTFILE
 # Export
 export OS DOTFILES_DIR
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

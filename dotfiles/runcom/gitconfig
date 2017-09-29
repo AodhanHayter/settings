@@ -53,3 +53,5 @@
   fsckobjects = true
 [gpg]
 	program = gpg
+[fetch]
+	fsckobjects = false
