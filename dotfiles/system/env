@@ -1,9 +1,5 @@
 #!/usr/bin/env zsh
 
-# Read by dyld (dynamic link editor) fixes issue with ycm (vim plugin)
-# caused by the python interpreter
-export DYLD_FORCE_FLAT_NAMESPACE=1
-
 # gpg
 export GPG_TTY=$(tty)
 

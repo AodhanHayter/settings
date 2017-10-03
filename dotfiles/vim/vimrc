@@ -60,6 +60,8 @@ call plug#begin('~/settings/dotfiles/vim/plugs')
 
 Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'maralla/completor.vim'
 Plug 'itchyny/lightline.vim'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -111,9 +113,10 @@ let g:autotagTagsFile='tags'
 
 " Completer
 """""""""""
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
+let g:completor_racer_binary = '~/.cargo/bin/racer'
+
+" Ultisnips
+" let g:UltiSnipsExpandTrigger="<c-e>"
 
 " ALE
 """""
