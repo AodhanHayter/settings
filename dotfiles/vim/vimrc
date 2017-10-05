@@ -69,7 +69,8 @@ Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-commentary'
-Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
 Plug 'elixir-editors/vim-elixir'
 Plug 'rust-lang/rust.vim'
 Plug 'cohama/lexima.vim'
@@ -100,10 +101,8 @@ nmap ga <Plug>(EasyAlign)
 
 " fzf
 """""
-" searches only files tracked by git
-map <leader>t :GitFiles<CR>
-" searches all files
-map <leader>ta :Files<CR>
+" search files
+map <leader>t :Files<CR>
 " Shows file preview
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)

@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 
 # Exports environment variables defined in a .env or .localenv file
-
 function setenv() {
   if [ -f .env ]; then
     export $(cat .env | xargs)

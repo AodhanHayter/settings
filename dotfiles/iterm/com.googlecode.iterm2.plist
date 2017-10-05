@@ -770,9 +770,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1864 210 606 469 1440 0 1920 1080 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1440 622 918 381 1440 0 1920 1058 </string>
+	<string>214 313 796 473 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1440 0 1920 1058 1440 0 1920 1080 </string>
+	<string>720 0 714 878 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>124 380 700 452 0 0 1440 878 </string>
 	<key>NeverWarnAboutShortLivedSessions_6AA215F6-5142-4C81-A1D0-84FC6A48D0CB</key>
@@ -1417,7 +1417,7 @@
 			<key>Log Directory</key>
 			<string></string>
 			<key>Minimum Contrast</key>
-			<real>0.0</real>
+			<real>0.36854727056962028</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -1818,7 +1818,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-09-29T15:22:24Z</date>
+	<date>2017-10-04T20:58:02Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
