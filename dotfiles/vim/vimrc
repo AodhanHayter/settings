@@ -62,22 +62,24 @@ Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'maralla/completor.vim'
+Plug 'maralla/completor.vim', { 'do': 'make js' }
 Plug 'itchyny/lightline.vim'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-commentary'
+Plug 'airblade/vim-gitgutter'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'flowtype/vim-flow', { 'for': 'javascript' }
 Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
-Plug 'elixir-editors/vim-elixir'
-Plug 'rust-lang/rust.vim'
+Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 Plug 'cohama/lexima.vim'
 Plug 'craigemery/vim-autotag'
 Plug 'Traap/vim-dragvisuals'
-Plug 'ElmCast/elm-vim'
-Plug 'trevordmiller/nova-vim'
+Plug 'AodhanHayter/nova-vim', { 'branch': 'master_diff_styling' }
 
 call plug#end()
 
@@ -114,20 +116,19 @@ let g:autotagTagsFile='tags'
 """""""""""
 let g:completor_racer_binary = '~/.cargo/bin/racer'
 
-" Ultisnips
-" let g:UltiSnipsExpandTrigger="<c-e>"
-
 " ALE
 """""
 let g:ale_linters = {
-      \ 'javascript': ['eslint'],
+      \ 'javascript': ['eslint', 'flow'],
       \ 'elixir': ['credo'],
       \ 'python': ['flake8'],
       \ 'elm': ['elm-make']
       \}
 
-let g:ale_sign_error = '❌'
-let g:ale_sign_warning = '⚠️'
+" Vim Flow
+""""""""""
+let g:flow#autoclose = 1
+let g:flow#enable = 0
 
 " nerd-tree
 """""""""""
