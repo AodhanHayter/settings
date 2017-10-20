@@ -18,6 +18,8 @@ source $ZPLUG_HOME/init.zsh
 zplug "modules/environment", from:prezto, defer:0
 
 zplug "mafredri/zsh-async", from:github, use:async.zsh
+zplug "docker/cli", from:github, use:contrib/completion/zsh
+zplug "docker/compose", from:github, use:contrib/completion/zsh
 
 # prompt
 zplug "sindresorhus/pure",  from:github, use:pure.zsh, as:theme

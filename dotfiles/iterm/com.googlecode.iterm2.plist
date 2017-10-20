@@ -561,6 +561,10 @@
 	<false/>
 	<key>DisableFullscreenTransparency</key>
 	<false/>
+	<key>EnableDivisionView</key>
+	<true/>
+	<key>EnableProxyIcon</key>
+	<false/>
 	<key>EnableRendezvous</key>
 	<false/>
 	<key>FocusFollowsMouse</key>
@@ -770,11 +774,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1864 210 606 469 1440 0 1920 1080 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>214 313 796 473 0 0 1440 900 </string>
+	<string>17 420 918 381 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>720 0 714 878 0 0 1440 878 </string>
+	<string>0 0 1440 878 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>124 380 700 452 0 0 1440 878 </string>
+	<string>124 380 650 452 0 0 1440 878 </string>
 	<key>NeverWarnAboutShortLivedSessions_6AA215F6-5142-4C81-A1D0-84FC6A48D0CB</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_6AA215F6-5142-4C81-A1D0-84FC6A48D0CB_selection</key>
@@ -1011,7 +1015,7 @@
 			<key>Badge Text</key>
 			<string></string>
 			<key>Blend</key>
-			<real>0.30000001192092896</real>
+			<real>0.28118365575105714</real>
 			<key>Blink Allowed</key>
 			<false/>
 			<key>Blinking Cursor</key>
@@ -1045,14 +1049,16 @@
 			<real>0.0</real>
 			<key>Cursor Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.792156862745098</real>
+				<real>0.76078431372549016</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.75686274509803919</real>
+				<real>0.55686274509803924</real>
 				<key>Red Component</key>
-				<real>0.49803921568627452</real>
+				<real>0.81960784313725488</real>
 			</dict>
 			<key>Cursor Guide Color</key>
 			<dict>
@@ -1488,7 +1494,7 @@
 			<key>Silence Bell</key>
 			<false/>
 			<key>Smart Cursor Color</key>
-			<true/>
+			<false/>
 			<key>Smart Selection Rules</key>
 			<array>
 				<dict>
@@ -1595,6 +1601,8 @@
 			<array/>
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
+			<key>Thin Strokes</key>
+			<integer>4</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Triggers</key>
@@ -1818,7 +1826,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-10-04T20:58:02Z</date>
+	<date>2017-10-05T20:58:02Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>

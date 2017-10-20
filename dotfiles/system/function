@@ -11,7 +11,6 @@ function setenv() {
 }
 
 # Generate random characters and export it
-
 function randomness() {
   export RANDOMNESS=$(openssl rand -base64 10)
 }
@@ -21,9 +20,17 @@ function mux_portal() {
 
   tmux start-server
   tmux new-session -d -c $PORTAL_DIR -s portal -n web
-  tmux new-window -t portal:1 -c $PORTAL_DIR -n server
+  tmux new-window -t portal:2 -c $PORTAL_DIR -n server
 
-  tmux select-window -t portal:0
+  tmux select-window -t portal:1
   tmux attach-session -t portal
 }
 
+# Switch and create tmux sessions from inside of other sessions
+function tm() {
+  [[ -n "$TMUX" ]] && change="switch-client" || change="attach-session"
+  if [ $1 ]; then
+     tmux $change -t "$1" 2>/dev/null || (tmux new-session -d -s $1 && tmux $change -t "$1"); return
+  fi
+  session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) &&  tmux $change -t "$session" || echo "No sessions found."
+}

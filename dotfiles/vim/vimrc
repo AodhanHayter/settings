@@ -40,7 +40,7 @@ set showmatch " show matching parens
 " leader maps
 """"""""""""""
 let mapleader=" "
-map <leader>s :source ~/.vim/vimrc<CR>
+map <leader>S :source ~/.vim/vimrc<CR>
 map <leader>co :set cursorcolumn!<CR>
 
 " use escape to remove highlight from search
@@ -69,6 +69,9 @@ Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'mbbill/undotree'
+Plug 'vim-scripts/DrawIt'
 Plug 'airblade/vim-gitgutter'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'flowtype/vim-flow', { 'for': 'javascript' }
@@ -79,7 +82,7 @@ Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 Plug 'cohama/lexima.vim'
 Plug 'craigemery/vim-autotag'
 Plug 'Traap/vim-dragvisuals'
-Plug 'AodhanHayter/nova-vim', { 'branch': 'master_diff_styling' }
+Plug 'trevordmiller/nova-vim'
 
 call plug#end()
 
