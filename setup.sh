@@ -45,7 +45,7 @@ if [[ "$install_homebrew" =~ ^[Yy]$ ]]; then
     echo "Dry Run!!!, Not Installing Hombrew"
   else
     echo "### Installing Homebrew ###"
-    # /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
 else
   echo "Skipping Homebrew install"
@@ -59,7 +59,7 @@ if [[ "$install_brew_packages" =~ ^[Yy]$ ]]; then
     echo "Dry Run!!!, Not Installing Hombrew packages"
   else
     echo "### Installing Homebrew packages ###"
-    brew bundle $(BREWFILE_PATH)
+    brew bundle --file=$(BREWFILE_PATH)
   fi
 else
   echo "Skipping Homebrew packages installation"
