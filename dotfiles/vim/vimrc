@@ -156,16 +156,14 @@ let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'filename', 'fugitive' ] ]
+      \             [ 'fugitive', 'filename' ] ]
       \ },
       \ 'component_function': {
       \   'fugitive': 'LightLineFugitive',
       \   'readonly': 'LightLineReadonly',
       \   'modified': 'LightLineModified',
       \   'filename': 'LightLineFilename'
-      \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+      \ }
       \ }
 
 
@@ -182,28 +180,24 @@ function! LightLineModified()
 endfunction
 
 function! LightLineReadonly()
-  if &filetype == "help"
-    return ""
-  elseif &readonly
-    return "⭤"
-  else
-    return ""
-  endif
+  return &readonly ? ' [read only]' : ''
 endfunction
 
 function! LightLineFugitive()
   if exists("*fugitive#head")
     let branch = fugitive#head()
-    return branch !=# '' ? '⭠ '.branch : ''
+    return branch !=# '' ? ''.branch : ''
+
   endif
   return ''
 endfunction
 
 function! LightLineFilename()
   let nr = bufnr('')
-  return nr . ':' . ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+  return nr . ':' .
     \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
-    \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+    \ ('' != LightLineModified() ? ' ' . LightLineModified() : '') .
+    \ ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '')
 endfunction
 
 " python with virtualenv support
