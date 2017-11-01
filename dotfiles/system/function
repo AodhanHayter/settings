@@ -16,7 +16,7 @@ function randomness() {
 }
 
 function mux_portal() {
-  local PORTAL_DIR=$HOME/Documents/Development/perfectPitch/portal
+  local PORTAL_DIR=$HOME/Development/perfectPitch/portal
 
   tmux start-server
   tmux new-session -d -c $PORTAL_DIR -s portal -n web
