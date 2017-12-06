@@ -13,8 +13,7 @@ export NODE_ENV="development"
 export NVM_DIR="$HOME/.nvm"
 
 # Python
-## virtualenvwrapper
-export WORKON_HOME="$HOME/Documents/Development/venvs"
+export WORKON_HOME="$HOME/venvs"
 
 # zplug
 export ZPLUG_HOME=/usr/local/opt/zplug
