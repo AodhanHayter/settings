@@ -768,9 +768,13 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>2090 411 620 392 1440 -88 1920 1058 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1855 559 918 381 1440 -88 1920 1080 </string>
+	<string>1855 543 918 381 1440 -88 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1646 371 650 452 1440 -88 1920 1080 </string>
+	<string>1480 37 1440 878 1440 -88 1920 1080 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>1687 19 650 452 1440 -88 1920 1080 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>1708 -4 650 452 1440 -88 1920 1080 </string>
 	<key>NeverWarnAboutShortLivedSessions_6AA215F6-5142-4C81-A1D0-84FC6A48D0CB</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_6AA215F6-5142-4C81-A1D0-84FC6A48D0CB_selection</key>
@@ -1044,7 +1048,7 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.76957386637877789</real>
+				<real>0.75142488239544036</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
@@ -1429,7 +1433,7 @@
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
-			<integer>1</integer>
+			<integer>2</integer>
 			<key>Prevent Opening in a Tab</key>
 			<false/>
 			<key>Prompt Before Closing 2</key>
@@ -1640,6 +1644,8 @@
 			<string>/Users/Aodhan</string>
 		</dict>
 	</array>
+	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
+	<true/>
 	<key>NoSyncHaveUsedCopyMode</key>
 	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
@@ -1654,6 +1660,8 @@
 	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>531089349.49423897</real>
+	<key>NoSyncTurnOffBracketedPasteOnHostChange</key>
+	<true/>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -1722,7 +1730,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-11-28T16:16:48Z</date>
+	<date>2017-12-18T16:23:09Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>

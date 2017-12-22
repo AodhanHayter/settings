@@ -36,6 +36,8 @@ set history=100
 
 set hlsearch " search highlight found words
 set showmatch " show matching parens
+set listchars=trail:·,tab:>-
+set list
 
 " leader maps
 """"""""""""""
@@ -47,6 +49,11 @@ map <leader>co :set cursorcolumn!<CR>
 """"""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 nnoremap <esc>^[ <esc>^[
+
+" keep selected text selected when fixing indentation
+"""""""""""""""""""""""""""""""""""""""""""""""""""""
+vnoremap < <gv
+vnoremap > >gv
 
 " autocmds
 """"""""""
@@ -66,6 +73,7 @@ Plug 'maralla/completor.vim', { 'do': 'make js' }
 Plug 'itchyny/lightline.vim'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-commentary'
@@ -93,6 +101,10 @@ colorscheme nova
 " elm-vim
 """""
 let g:elm_format_autosave=1
+
+" Easy Motion
+"""""""""""""
+nmap F <Plug>(easymotion-prefix)s
 
 " Easy Align
 """"""""""""
