@@ -1,0 +1,13 @@
+#!/usr/bin/env zsh
+
+# Generate ctags for javascript project
+
+function jstags() {
+  if [[ -x $1 ]]; then
+    ctags -R $1 \
+      && sed -i '' -E '/^(if|switch|function|module\.exports|it|describe).+language:js$/d' tags \
+      && echo 'Tags generated'
+  else
+    echo 'You must pass a base directory for ctags to recursively generate tags from'
+  fi
+}
