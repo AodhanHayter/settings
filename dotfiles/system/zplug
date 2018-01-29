@@ -38,6 +38,7 @@ zplug "modules/utility", from:prezto
 zplug "modules/completion", from:prezto, defer:1
 
 zplug "modules/syntax-highlighting", from:prezto, defer:2
+zplug "lukechilds/zsh-better-npm-completion", defer:2
 zplug "modules/history-substring-search", from:prezto, defer:3
 
 zplug load
