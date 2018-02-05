@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+# This file is sourced from ../runcom/zshrc
+
 # Generate ctags for javascript project
 
 function jstags() {

@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+# This file is sourced from ../runcom/zshrc
+
 # Lazy load nvm when used
 nvm() {
   unset -f nvm

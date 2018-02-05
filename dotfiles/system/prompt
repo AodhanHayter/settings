@@ -1,2 +1,5 @@
 #!/usr/bin/env zsh
+
+# This file is sourced from ../runcom/zshrc
+
 # add prompt specific settings here

@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+# This file is sourced from ../runcom/zshenv
+
 # gpg
 export GPG_TTY=$(tty)
 
@@ -55,4 +57,3 @@ if [[ ! -d "$TMPDIR" ]]; then
 fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
-

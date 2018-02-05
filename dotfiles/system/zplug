@@ -1,16 +1,18 @@
 #!/usr/bin/env zsh
 
+# This file is sourced from ../runcom/zshrc
+
 # prezto options
 zstyle ':prezto:module:*' color 'yes'
 zstyle ':prezto:module:*' case-sensitive 'no'
 zstyle ':prezto:module:editor' key-bindings 'vi'
 zstyle ':prezto:module:syntax-highlighting' styles \
-	  'alias' 'fg=blue' \
-	  'builtin' 'fg=blue' \
-	  'command' 'fg=blue' \
-	  'function' 'fg=blue' \
-	  'precommand' 'fg=cyan' \
-	  'commandseparator' 'fg=green'
+  'alias' 'fg=blue' \
+  'builtin' 'fg=blue' \
+  'command' 'fg=blue' \
+  'function' 'fg=blue' \
+  'precommand' 'fg=cyan' \
+  'commandseparator' 'fg=green'
 
 # Source zplug
 source $ZPLUG_HOME/init.zsh

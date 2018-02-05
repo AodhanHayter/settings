@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+# This file is sourced from ../runcom/zshrc
+
 # Exports environment variables defined in a .env or .localenv file
 function setenv() {
   if [ -f .env ]; then

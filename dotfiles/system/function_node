@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+# This file is sourced from ../runcom/zshrc
+
 # Get path to currently active version of node managed by nvm
 
 function get_nvm_bin() {

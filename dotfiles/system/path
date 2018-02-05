@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+# This file is sourced from ../runcom/zshenv
+
 # Setup path
 path=(
 $HOME/.cargo/bin
