@@ -22,6 +22,7 @@ zplug "modules/environment", from:prezto, defer:0
 zplug "mafredri/zsh-async", from:github, use:async.zsh
 zplug "docker/cli", from:github, use:contrib/completion/zsh
 zplug "docker/compose", from:github, use:contrib/completion/zsh
+zplug "mfaerevaag/wd", from:github, as:command, use:"wd.sh", hook-load:"wd() { . $ZPLUG_REPOS/mfaerevaag/wd/wd.sh }"
 
 # prompt
 zplug "sindresorhus/pure",  from:github, use:pure.zsh, as:theme

@@ -1,7 +1,7 @@
 [user]
-	email = aodhan.hayter@gmail.com
-	name = Aodhan Hayter
-	signingkey = 3FBACD0B82D05567FC1BB765FD58CC579E91D1C5
+  email = aodhan.hayter@gmail.com
+  name = Aodhan Hayter
+  signingkey = 3FBACD0B82D05567FC1BB765FD58CC579E91D1C5
 [github]
   user = AodhanHayter
 [alias]
@@ -16,8 +16,8 @@
   default = simple
   followTags = true
 [core]
-	editor = vim
-	excludesfile = /Users/Aodhan/.global_ignore
+  editor = vim
+  excludesfile = /Users/Aodhan/.global_ignore
 [log]
   date = relative
 [help]
@@ -25,7 +25,7 @@
 [column]
   ui = auto
 [color]
-	ui = true
+  ui = true
 [color]
   pager = true
   ui = auto
@@ -36,12 +36,12 @@
   interactive = auto
   grep = auto
 [url "https://"]
-	insteadOf = git://
+  insteadOf = git://
 [diff]
-	tool = vimdiff
+  tool = vimdiff
 [merge]
   conflictstyle = diff3
-	tool = vimdiff
+  tool = vimdiff
 [commit]
   gpgSign = true
 [push]
@@ -52,6 +52,6 @@
 [transfer]
   fsckobjects = true
 [gpg]
-	program = gpg
+  program = gpg
 [fetch]
-	fsckobjects = false
+  fsckobjects = false

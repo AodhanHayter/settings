@@ -716,7 +716,7 @@
 	<key>LeftOption</key>
 	<integer>2</integer>
 	<key>LeftTabBarWidth</key>
-	<real>50</real>
+	<real>50.2578125</real>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>MaxVertically</key>
@@ -770,9 +770,9 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>1855 543 918 381 1440 -88 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1480 37 1440 878 1440 -88 1920 1080 </string>
+	<string>1680 -336 1916 707 1680 -342 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1687 19 650 452 1440 -88 1920 1080 </string>
+	<string>1680 732 1914 1064 1680 -342 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>1708 -4 650 452 1440 -88 1920 1080 </string>
 	<key>NeverWarnAboutShortLivedSessions_6AA215F6-5142-4C81-A1D0-84FC6A48D0CB</key>
@@ -1730,7 +1730,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-12-18T16:23:09Z</date>
+	<date>2018-03-12T15:55:00Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
