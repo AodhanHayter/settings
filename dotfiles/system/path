@@ -4,10 +4,9 @@
 
 # Setup path
 path=(
+$path
 $HOME/.cargo/bin
 $HOME/.yarn/bin
-/usr/local/{bin,sbin}
-$path
 )
 
 # Ensure path arrays do not contain duplicates

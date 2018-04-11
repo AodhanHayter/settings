@@ -167,7 +167,8 @@ let g:ale_linters = {
       \ 'javascript': ['eslint', 'flow'],
       \ 'elixir': ['credo'],
       \ 'python': ['flake8'],
-      \ 'elm': ['elm-make']
+      \ 'elm': ['elm-make'],
+      \ 'sh': ['shellcheck']
       \}
 
 let g:ale_fixers = {
