@@ -89,6 +89,7 @@ Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
 Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
+Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
 Plug 'itmammoth/doorboy.vim'
 Plug 'craigemery/vim-autotag'
 Plug 'Traap/vim-dragvisuals'
