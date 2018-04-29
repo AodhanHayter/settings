@@ -90,6 +90,7 @@ Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
+Plug 'jpalardy/vim-slime'
 Plug 'itmammoth/doorboy.vim'
 Plug 'craigemery/vim-autotag'
 Plug 'Traap/vim-dragvisuals'
@@ -198,6 +199,10 @@ vmap  <expr>  D        DVB_Duplicate()
 
 " remove any introduced trailing whitespace after moving
 let g:DVB_TrimWS = 1
+
+" vim slime
+""""""""""""
+let g:slime_target = "tmux"
 
 " lightline setup
 """""""""""""""""
