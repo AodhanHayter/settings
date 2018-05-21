@@ -8,3 +8,4 @@ for DOTFILE in "$DOTFILES_DIR"/system/{function,function_*,prompt,nvm,rvm,zplug,
 done
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -x "$(command -v pipenv)" ] && eval "$(env _PIPENV_COMPLETE=source-zsh pipenv)"
