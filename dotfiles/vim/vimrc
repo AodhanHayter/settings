@@ -95,6 +95,7 @@ Plug 'itmammoth/doorboy.vim'
 Plug 'craigemery/vim-autotag'
 Plug 'Traap/vim-dragvisuals'
 Plug 'trevordmiller/nova-vim'
+Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
 
 call plug#end()
 
@@ -123,11 +124,11 @@ xmap ga <Plug>(EasyAlign)
 "Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-
 " fzf
 """""
 " search files
 map <leader>t :Files<CR>
+" search open buffers
 map <leader>b :Buffers<CR>
 
 " Match theme colors
