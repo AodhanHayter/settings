@@ -90,6 +90,7 @@ Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
+Plug 'eraserhd/parinfer-rust', { 'for': 'racket', 'do': 'cargo build --release' }
 Plug 'jpalardy/vim-slime'
 Plug 'itmammoth/doorboy.vim'
 Plug 'craigemery/vim-autotag'
