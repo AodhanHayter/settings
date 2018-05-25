@@ -15,7 +15,7 @@ zstyle ':prezto:module:syntax-highlighting' styles \
   'commandseparator' 'fg=green'
 
 # Source zplug
-source $ZPLUG_HOME/init.zsh
+source "$ZPLUG_HOME"/init.zsh
 
 zplug "modules/environment", from:prezto, defer:0
 
