@@ -764,15 +764,17 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>244 122 996 120 0 0 1440 900 </string>
+	<string>2492 30 1309 317 1440 -468 3840 2138 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>2090 411 620 392 1440 -88 1920 1058 </string>
+	<string>3050 841 620 392 1440 -468 3840 2138 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>1709 -342 606 469 1440 -468 3840 2138 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1855 543 918 381 1440 -88 1920 1080 </string>
+	<string>2352 1113 796 473 1440 -530 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1680 -336 1916 707 1680 -342 3840 2138 </string>
+	<string>3168 -530 2110 2138 1440 -530 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1680 732 1914 1064 1680 -342 3840 2138 </string>
+	<string>1680 1344 651 452 1680 -342 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>1708 -4 650 452 1440 -88 1920 1080 </string>
 	<key>NeverWarnAboutShortLivedSessions_6AA215F6-5142-4C81-A1D0-84FC6A48D0CB</key>
@@ -1429,7 +1431,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>OperatorMonoNerdFontC-Medium 14</string>
+			<string>OperatorMonoNerdFontC-Medium 18</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -1730,7 +1732,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-03-12T15:55:00Z</date>
+	<date>2018-06-04T16:03:10Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -1788,7 +1790,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.5</string>
+	<string>3.1.6</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
