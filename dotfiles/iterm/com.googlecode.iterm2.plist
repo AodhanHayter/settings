@@ -770,9 +770,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1709 -342 606 469 1440 -468 3840 2138 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>2352 1113 796 473 1440 -530 3840 2138 </string>
+	<string>2352 1134 918 452 1440 -530 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1440 1031 810 577 1440 -530 3840 2138 </string>
+	<string>3360 -530 1920 2138 1440 -530 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>1680 1344 651 452 1680 -342 3840 2138 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1641,7 +1641,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>0</integer>
+			<integer>12</integer>
 			<key>Working Directory</key>
 			<string>/Users/Aodhan</string>
 		</dict>
@@ -2594,7 +2594,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-07-09T15:29:31Z</date>
+	<date>2018-07-12T15:37:27Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
