@@ -99,6 +99,8 @@ Plug 'tpope/vim-surround'
 Plug 'mbbill/undotree'
 Plug 'airblade/vim-gitgutter'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
 Plug 'flowtype/vim-flow', { 'for': 'javascript' }
 Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
 Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
@@ -184,6 +186,7 @@ map <leader>af :ALEFix<CR>
 
 let g:ale_linters = {
       \ 'javascript': ['eslint', 'flow'],
+      \ 'typescript': ['tslint'],
       \ 'elixir': ['credo'],
       \ 'python': ['flake8'],
       \ 'elm': ['elm-make'],
@@ -192,6 +195,7 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
   \ 'javascript': ['prettier'],
+  \ 'typescript': ['tslint'],
   \ 'sh': ['shfmt -i 2']
   \}
 
