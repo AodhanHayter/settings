@@ -5,9 +5,6 @@
 # gpg
 export GPG_TTY=$(tty)
 
-# Perfect Pitch Deployment Key for Docker services
-export PP_DEPLOY_KEY="$(cat "$HOME/.ssh/pp_deploy_rsa")"
-
 # Javascript
 ## Node
 export NODE_ENV="development"

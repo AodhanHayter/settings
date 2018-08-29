@@ -721,8 +721,6 @@
 	<true/>
 	<key>MaxVertically</key>
 	<false/>
-	<key>NSFontPanelAttributes</key>
-	<string>1, 4</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/settings/dotfiles/iterm</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -758,25 +756,10 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
-	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
-	<dict>
-		<key>TB Is Shown</key>
-		<integer>1</integer>
-	</dict>
-	<key>NSWindow Frame NSFontPanel</key>
-	<string>2492 30 1309 317 1440 -468 3840 2138 </string>
-	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>3050 779 620 392 1440 -530 3840 2138 </string>
-	<key>NSWindow Frame SessionsPreferences</key>
-	<string>1709 -342 606 469 1440 -468 3840 2138 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>2352 1134 918 452 1440 -530 3840 2138 </string>
+	<string>-1959 442 796 486 -2560 -174 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>3360 -530 1920 2138 1440 -530 3840 2138 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1680 1344 651 452 1680 -342 3840 2138 </string>
-	<key>NSWindow Frame iTerm Window 2</key>
-	<string>1708 -4 650 452 1440 -88 1920 1080 </string>
+	<string>-1280 -174 1280 1417 -2560 -174 2560 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_6AA215F6-5142-4C81-A1D0-84FC6A48D0CB</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_6AA215F6-5142-4C81-A1D0-84FC6A48D0CB_selection</key>
@@ -787,7 +770,7 @@
 			<key>ASCII Anti Aliased</key>
 			<true/>
 			<key>ASCII Ligatures</key>
-			<true/>
+			<false/>
 			<key>AWDS Pane Directory</key>
 			<string></string>
 			<key>AWDS Pane Option</key>
@@ -2508,24 +2491,16 @@
 			<string>/Users/Aodhan</string>
 		</dict>
 	</array>
-	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
-	<true/>
-	<key>NoSyncHaveUsedCopyMode</key>
-	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>1371F529-A208-487E-8531-3C1541A25DC6</string>
+	<string>9FBF4F1D-C4AF-40E1-B9CF-FBC51C6615B1</string>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
-	<key>NoSyncPermissionToShowTip</key>
-	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>531089349.49423897</real>
-	<key>NoSyncTurnOffBracketedPasteOnHostChange</key>
-	<true/>
+	<real>557099566.63860095</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -2574,7 +2549,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/aodhan/settings/dotfiles/iterm</string>
+	<string>/Users/aodhanhayter/settings/dotfiles/iterm</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>
@@ -2590,11 +2565,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=37</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=48</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-07-12T15:37:27Z</date>
+	<date>2018-08-27T22:07:04Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -2652,7 +2627,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.7</string>
+	<string>3.2.0</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
