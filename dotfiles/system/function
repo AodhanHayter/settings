@@ -28,6 +28,19 @@ function mux_portal() {
   tmux attach-session -t portal
 }
 
+function mux_moon() {
+  local MOONBEAM_DIR=$HOME/development/op/moonbeam
+
+  tmux start-server
+  tmux new-session -d -c $MOONBEAM_DIR -s moon -n web
+  tmux new-window -t moon:2 -c $MOONBEAM_DIR -n server
+
+  tmux select-window -t moon:1
+  tmux attach-session -t moon
+
+  node -v
+}
+
 # Switch and create tmux sessions from inside of other sessions
 function tm() {
   [[ -n "$TMUX" ]] && change="switch-client" || change="attach-session"
