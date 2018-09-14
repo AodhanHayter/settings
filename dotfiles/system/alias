@@ -3,3 +3,5 @@
 # This file is sourced from ../runcom/zshrc
 
 alias ll='exa -lbhg'
+alias cat='bat'
+alias ping='prettyping --nolegend'

@@ -9,4 +9,5 @@ done
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -x "$(command -v pipenv)" ] && eval "$(env _PIPENV_COMPLETE=source-zsh pipenv)"
+[ -f ~/src/svm/smv.sh ] && source ~/src/svm/svm.sh
 

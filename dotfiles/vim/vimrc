@@ -97,6 +97,7 @@ Plug 'tpope/vim-git'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'mbbill/undotree'
+Plug 'yegappan/mru'
 Plug 'airblade/vim-gitgutter'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
@@ -172,7 +173,7 @@ command! -bang -nargs=? -complete=dir Files
 
 " Custom :Find command for full text search
 command! -bang -nargs=* Find
-  \ call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --glob "!tags" --glob "!build" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+  \ call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --glob "!tags" --glob "!build" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 
 " auto-tags
 let g:autotagTagsFile='tags'
@@ -186,13 +187,16 @@ let g:completor_racer_binary = '~/.cargo/bin/racer'
 map <leader>af :ALEFix<CR>
 
 let g:ale_linters = {
-      \ 'javascript': ['eslint', 'flow'],
-      \ 'typescript': ['tslint'],
-      \ 'elixir': ['credo'],
-      \ 'python': ['flake8'],
-      \ 'elm': ['elm-make'],
-      \ 'sh': ['shellcheck']
-      \}
+  \ 'javascript': ['eslint', 'flow'],
+  \ 'elixir': ['credo'],
+  \ 'python': ['flake8'],
+  \ 'elm': ['elm-make'],
+  \ 'sh': ['shellcheck']
+  \}
+
+let g:ale_linters_ignore = {
+  \ 'typescript': ['tslint']
+  \}
 
 let g:ale_fixers = {
   \ 'javascript': ['prettier'],

@@ -5,31 +5,31 @@
 # Lazy load nvm when used
 nvm() {
   unset -f nvm
-  [ -s "$NVM_DIR/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   nvm "$@"
 }
 
 # Load nvm when a node related tool is being used
 nps() {
   unset -f nps
-  [ -s "$NVM_DIR/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
   nps "$@"
 }
 
 node() {
   unset -f node
-  [ -s "$NVM_DIR/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
   node "$@"
 }
 
 npm() {
   unset -f npm
-  [ -s "$NVM_DIR/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
   npm "$@"
 }
 
 yarn() {
   unset -f yarn
-  [ -s "$NVM_DIR/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
   yarn "$@"
 }
