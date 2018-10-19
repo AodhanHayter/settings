@@ -183,6 +183,7 @@ let g:completor_racer_binary = '~/.cargo/bin/racer'
 " ALE
 """""
 map <leader>af :ALEFix<CR>
+map <leader>an :ALENext<CR>
 
 let g:ale_linters = {
   \ 'javascript': ['eslint', 'flow'],
