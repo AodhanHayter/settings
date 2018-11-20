@@ -176,7 +176,7 @@ command! -bang -nargs=* Find
 " auto-tags
 let g:autotagTagsFile='tags'
 
-" Completer
+" Completor
 """""""""""
 let g:completor_racer_binary = '~/.cargo/bin/racer'
 
