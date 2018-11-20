@@ -198,6 +198,8 @@ let g:ale_linters_ignore = {'typescript': ['tslint']}
 
 let g:ale_fixers = {
   \ 'javascript': ['prettier'],
+  \ 'json': ['prettier'],
+  \ 'less': ['prettier'],
   \ 'typescript': ['prettier', 'tslint'],
   \ 'sh': ['shfmt -i 2']
   \}
