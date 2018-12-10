@@ -62,3 +62,5 @@
   program = gpg
 [fetch]
   fsckobjects = false
+[rerere]
+  enabled = true
