@@ -128,7 +128,9 @@ let g:elm_format_autosave = 1
 """"""""""""""""""""""""
 set ballooneval
 autocmd FileType typescript nmap <buffer> <Leader>T : <C-u>echo tsuquyomi#hint()<CR>
+let g:tsuquyomi_shortest_import_path = 1
 map <leader>I :TsuImport<CR>
+
 " Easy Motion
 """""""""""""
 nmap F <Plug>(easymotion-prefix)s
