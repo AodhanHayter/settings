@@ -11,3 +11,6 @@ done
 [ -x "$(command -v pipenv)" ] && eval "$(env _PIPENV_COMPLETE=source-zsh pipenv)"
 [ -f ~/src/svm/svm.sh ] && source ~/src/svm/svm.sh
 
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+

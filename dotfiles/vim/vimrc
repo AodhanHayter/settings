@@ -87,6 +87,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'skatzteyp/vim-ultisnips-angular2'
 Plug 'maralla/completor.vim', { 'do': 'make js' }
 Plug 'maralla/completor-typescript'
 Plug 'itchyny/lightline.vim'
@@ -105,6 +106,7 @@ Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
 Plug 'eraserhd/parinfer-rust', { 'for': 'racket', 'do': 'cargo build --release' }
 Plug 'jpalardy/vim-slime'
 Plug 'itmammoth/doorboy.vim'
+Plug 'tmhedberg/matchit'
 Plug 'craigemery/vim-autotag'
 Plug 'Traap/vim-dragvisuals'
 Plug 'trevordmiller/nova-vim'
@@ -179,6 +181,7 @@ let g:autotagTagsFile='tags'
 " Completor
 """""""""""
 let g:completor_racer_binary = '~/.cargo/bin/racer'
+" let g:completor_auto_trigger = 0
 
 " ALE
 """""
