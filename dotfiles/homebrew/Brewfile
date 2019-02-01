@@ -11,6 +11,7 @@ tap 'tidwall/jj'
 
 brew 'archey'
 brew 'ctags'
+brew 'entr'
 brew 'elixir'
 brew 'elm'
 brew 'exa'
