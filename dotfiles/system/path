@@ -7,6 +7,7 @@ path=(
 $path
 /usr/local/sbin
 $HOME/.cargo/bin
+$HOME/.fnm
 $HOME/.yarn/bin
 $HOME/.config/yarn/global/node_modules/.bin
 )

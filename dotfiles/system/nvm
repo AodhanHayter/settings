@@ -1,35 +1,3 @@
 #!/usr/bin/env zsh
 
 # This file is sourced from ../runcom/zshrc
-
-# Lazy load nvm when used
-nvm() {
-  unset -f nvm
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  nvm "$@"
-}
-
-# Load nvm when a node related tool is being used
-nps() {
-  unset -f nps
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
-  nps "$@"
-}
-
-node() {
-  unset -f node
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
-  node "$@"
-}
-
-npm() {
-  unset -f npm
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
-  npm "$@"
-}
-
-yarn() {
-  unset -f yarn
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
-  yarn "$@"
-}

@@ -5,3 +5,4 @@
 alias ll='exa -lbhg'
 alias cat='bat'
 alias ping='prettyping --nolegend'
+alias nvm='fnm'

@@ -2,6 +2,9 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 6,
     sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
   env: {
     es6: true,
@@ -9,4 +12,4 @@ module.exports = {
     commonjs: true,
   },
   extends: ['eslint:recommended'],
-}
+};
