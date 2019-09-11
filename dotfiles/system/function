@@ -18,7 +18,7 @@ function randomness() {
 }
 
 function mux_portal() {
-  local PORTAL_DIR=$HOME/Development/perfectPitch/portal
+  local PORTAL_DIR=$HOME/development/pp/portal
 
   tmux start-server
   tmux new-session -d -c $PORTAL_DIR -s portal -n web
@@ -28,17 +28,15 @@ function mux_portal() {
   tmux attach-session -t portal
 }
 
-function mux_moon() {
-  local MOONBEAM_DIR=$HOME/development/op/moonbeam
+function mux_frontend_course() {
+  local PROJECT_DIR=$HOME/development/boomcamp/frontend-course
 
   tmux start-server
-  tmux new-session -d -c $MOONBEAM_DIR -s moon -n web
-  tmux new-window -t moon:2 -c $MOONBEAM_DIR -n webpack
-  tmux new-window -t moon:3 -c $MOONBEAM_DIR -n strybk
-  tmux new-window -t moon:4 -c $MOONBEAM_DIR -n sbt
+  tmux new-session -d -c $PROJECT_DIR -s fr-course -n code
+  tmux new-window -t fr-course:2 $PROJECT_DIR -n term
 
-  tmux select-window -t moon:1
-  tmux attach-session -t moon
+  tmux select-window -t fr-course:1
+  tmux attach-session -t fr-course
 }
 
 # Switch and create tmux sessions from inside of other sessions
