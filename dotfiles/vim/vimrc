@@ -84,7 +84,7 @@ autocmd InsertLeave * set nocul
 call plug#begin('~/settings/dotfiles/vim/plugs')
 
 Plug 'scrooloose/nerdtree'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'skatzteyp/vim-ultisnips-angular2'
@@ -192,6 +192,8 @@ let g:completor_racer_binary = '~/.cargo/bin/racer'
 """""
 map <leader>af :ALEFix<CR>
 map <leader>an :ALENext<CR>
+
+let g:ale_completion_enabled = 1
 
 let g:ale_linters = {
   \ 'javascript': ['eslint', 'flow'],
