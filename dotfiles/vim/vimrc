@@ -215,7 +215,8 @@ let g:ale_fixers = {
   \ 'less': ['prettier'],
   \ 'markdown': ['prettier'],
   \ 'typescript': ['prettier', 'tslint'],
-  \ 'sh': ['shfmt -i 2']
+  \ 'sh': ['shfmt -i 2'],
+  \ 'purescript': ['purty']
   \}
 
 " Vim Flow
