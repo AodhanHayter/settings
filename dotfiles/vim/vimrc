@@ -28,6 +28,7 @@ set expandtab
 set smartindent
 set autoindent
 set hidden
+set mouse=a
 
 set updatetime=250
 set timeoutlen=1000
@@ -79,48 +80,100 @@ autocmd BufWritePre * :%s/\s\+$//e " remove whitespaces on save
 autocmd InsertEnter * set cul
 autocmd InsertLeave * set nocul
 
+let g:ale_set_balloons = 1
+
 " Vim Plug
-""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/settings/dotfiles/vim/plugs')
 
+" File Explorer
+"""""""""""""""
 Plug 'scrooloose/nerdtree'
+
+" File Linting
+""""""""""""""
 Plug 'w0rp/ale'
+
+" Code Snippets
+"""""""""""""""
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'skatzteyp/vim-ultisnips-angular2'
-Plug 'maralla/completor.vim', { 'do': 'make js' }
-Plug 'maralla/completor-typescript'
+
+" Autocomplete Crap
+"""""""""""""""""""
+if has ('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+" Javascript Completion
+"""
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+
+" Buffer / Pane UI
+""""""""""""""""""
 Plug 'itchyny/lightline.vim'
+
+" Fuzzy Search
+""""""""""""""
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+
+" Movement Helpers
+""""""""""""""""""
 Plug 'junegunn/vim-easy-align'
 Plug 'easymotion/vim-easymotion'
+Plug 'tmhedberg/matchit'
+Plug 'Traap/vim-dragvisuals'
+
+" Git Helpers
+"""""""""""""
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
+
+" Quick insert helpers
+"""""""""""""""
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'itmammoth/doorboy.vim'
+
+" Undo tree explorer
+""""""""""""""""""""
 Plug 'mbbill/undotree'
 Plug 'yegappan/mru'
-Plug 'airblade/vim-gitgutter'
+
+" Language Highlighting
+"""""""""""""""""""""""
 Plug 'sheerun/vim-polyglot'
-Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
+
+" Lisp Junk
+"""""""""""
 Plug 'eraserhd/parinfer-rust', { 'for': 'racket', 'do': 'cargo build --release' }
 Plug 'jpalardy/vim-slime'
-Plug 'itmammoth/doorboy.vim'
-Plug 'tmhedberg/matchit'
+
+" Tag files
 Plug 'craigemery/vim-autotag'
-Plug 'Traap/vim-dragvisuals'
+
+" Markdown
+""""""""""
+Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app & yarn install' }
+
+" Themes
+""""""""
 Plug 'trevordmiller/nova-vim'
-Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': { -> mkdp#util#install() } }
 
 call plug#end()
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" theme
+" Set Theme
 """""""
 colorscheme nova
 
 " vim-javascript
 """"""""""""""""
-let g:javascript_plugin_flow = 1
 
 " elm-vim
 """""""""
@@ -128,13 +181,6 @@ let g:elm_format_autosave = 1
 
 " markdown-preview
 let g:mkdp_auto_close = 0
-
-" tsuquyomi (typescript)
-""""""""""""""""""""""""
-set ballooneval
-autocmd FileType typescript nmap <buffer> <Leader>T : <C-u>echo tsuquyomi#hint()<CR>
-let g:tsuquyomi_shortest_import_path = 1
-map <leader>I :TsuImport<CR>
 
 " Easy Motion
 """""""""""""
@@ -183,18 +229,33 @@ command! -bang -nargs=* Find
 " auto-tags
 let g:autotagTagsFile='tags'
 
-" Completor
-"""""""""""
-let g:completor_racer_binary = '~/.cargo/bin/racer'
-" let g:completor_auto_trigger = 0
+" deoplete
+"""
+let g:LanguageClient_serverCommands = {
+  \ 'reason': ['/usr/local/bin/reason-language-server'],
+  \ }
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#ternjs#types = 1
+
+call deoplete#custom#option({
+  \ 'sources': { '_': ['ale'] }
+  \ })
+
+" ReasonML
+"""
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
 " ALE
 """""
 map <leader>af :ALEFix<CR>
 map <leader>an :ALENext<CR>
 
+let g:ale_reason_ls_executable = '/usr/local/bin/reason-language-server'
+
 let g:ale_linters = {
   \ 'javascript': ['eslint', 'flow'],
+  \ 'reason': ['reason-language-server'],
   \ 'typescript': ['tsserver'],
   \ 'elixir': ['credo'],
   \ 'python': ['flake8'],
@@ -202,13 +263,18 @@ let g:ale_linters = {
   \ 'sh': ['shellcheck']
   \}
 
-let g:ale_linters_ignore = {'typescript': ['tslint']}
+let g:ale_linters_ignore = {
+  \ 'typescript': ['tslint'],
+  \ 'reason': ['ols']
+  \}
+
 
 let g:ale_javascript_prettier_options = '--prose-wrap always'
 
 let g:ale_fixers = {
   \ 'html': ['prettier'],
   \ 'javascript': ['prettier'],
+  \ 'reason': ['refmt'],
   \ 'json': ['prettier'],
   \ 'less': ['prettier'],
   \ 'markdown': ['prettier'],
