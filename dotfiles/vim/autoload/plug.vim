@@ -401,25 +401,24 @@ if s:is_win
 
   " Copied from fzf
   function! s:wrap_cmds(cmds)
-    let cmds = [
+    let use_chcp = executable('sed')
+    return map([
       \ '@echo off',
       \ 'setlocal enabledelayedexpansion']
+    \ + (use_chcp ? [
+      \ 'for /f "usebackq" %%a in (`chcp ^| sed "s/[^0-9]//gp"`) do set origchcp=%%a',
+      \ 'chcp 65001 > nul'] : [])
     \ + (type(a:cmds) == type([]) ? a:cmds : [a:cmds])
-    \ + ['endlocal']
-    if has('iconv')
-      if !exists('s:codepage')
-        let s:codepage = libcallnr('kernel32.dll', 'GetACP', 0)
-      endif
-      return map(cmds, printf('iconv(v:val."\r", "%s", "cp%d")', &encoding, s:codepage))
-    endif
-    return map(cmds, 'v:val."\r"')
+    \ + (use_chcp ? ['chcp !origchcp! > nul'] : [])
+    \ + ['endlocal'],
+    \ 'v:val."\r"')
   endfunction
 
   function! s:batchfile(cmd)
-    let batchfile = s:plug_tempname().'.bat'
+    let batchfile = tempname().'.bat'
     call writefile(s:wrap_cmds(a:cmd), batchfile)
-    let cmd = plug#shellescape(batchfile, {'shell': &shell, 'script': 0})
-    if &shell =~# 'powershell\.exe'
+    let cmd = plug#shellescape(batchfile, {'shell': &shell, 'script': 1})
+    if &shell =~# 'powershell\.exe$'
       let cmd = '& ' . cmd
     endif
     return [batchfile, cmd]
@@ -1218,7 +1217,7 @@ function! s:job_abort()
       silent! call job_stop(j.jobid)
     endif
     if j.new
-      call s:rm_rf(g:plugs[name].dir)
+      call s:system('rm -rf ' . plug#shellescape(g:plugs[name].dir))
     endif
   endfor
   let s:jobs = {}
@@ -2051,17 +2050,13 @@ function! s:shellesc_ps1(arg)
   return "'".substitute(escape(a:arg, '\"'), "'", "''", 'g')."'"
 endfunction
 
-function! s:shellesc_sh(arg)
-  return "'".substitute(a:arg, "'", "'\\\\''", 'g')."'"
-endfunction
-
 function! plug#shellescape(arg, ...)
   let opts = a:0 > 0 && type(a:1) == s:TYPE.dict ? a:1 : {}
   let shell = get(opts, 'shell', s:is_win ? 'cmd.exe' : 'sh')
   let script = get(opts, 'script', 1)
-  if shell =~# 'cmd\.exe'
+  if shell =~# 'cmd\.exe$'
     return s:shellesc_cmd(a:arg, script)
-  elseif shell =~# 'powershell\.exe' || shell =~# 'pwsh$'
+  elseif shell =~# 'powershell\.exe$' || shell =~# 'pwsh$'
     return s:shellesc_ps1(a:arg)
   endif
   return s:shellesc_sh(a:arg)
@@ -2489,9 +2484,7 @@ function! s:diff()
     call s:append_ul(2, origin ? 'Pending updates:' : 'Last update:')
     for [k, v] in plugs
       let range = origin ? '..origin/'.v.branch : 'HEAD@{1}..'
-      let cmd = 'git log --graph --color=never '
-      \ . (s:git_version_requirement(2, 10, 0) ? '--no-show-signature ' : '')
-      \ . join(map(['--pretty=format:%x01%h%x01%d%x01%s%x01%cr', range], 'plug#shellescape(v:val)'))
+      let cmd = 'git log --graph --color=never '.join(map(['--pretty=format:%x01%h%x01%d%x01%s%x01%cr', range], 'plug#shellescape(v:val)'))
       if has_key(v, 'rtp')
         let cmd .= ' -- '.plug#shellescape(v.rtp)
       endif
