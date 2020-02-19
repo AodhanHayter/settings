@@ -84,17 +84,25 @@ let g:ale_set_balloons = 1
 
 " Vim Plug
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Auto install plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/settings/dotfiles/vim/plugs')
 
 " File Explorer
 """""""""""""""
 Plug 'scrooloose/nerdtree'
+
+" Autocomplete Crap
+"""""""""""""""""""
 Plug 'dense-analysis/ale'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
-" Autocomplete Crap
-"""""""""""""""""""
 if has ('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -106,6 +114,10 @@ endif
 " Javascript Completion
 """
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+
+" Reason Completion
+"""
+Plug 'reasonml-editor/vim-reason-plus'
 
 " Buffer / Pane UI
 """"""""""""""""""
@@ -231,9 +243,7 @@ let g:LanguageClient_serverCommands = {
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#ternjs#types = 1
 
-call deoplete#custom#option({
-  \ 'sources': { '_': ['ale'] }
-  \ })
+call deoplete#custom#source('ale', 'rank', 999)
 
 " ReasonML
 """
@@ -244,8 +254,10 @@ execute "set rtp+=" . g:opamshare . "/merlin/vim"
 """""
 map <leader>af :ALEFix<CR>
 map <leader>an :ALENext<CR>
+map <leader>ag :ALEGoToDefinition<CR>
 
-let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 0
+let g:ale_reason_ls_executable = '/usr/local/bin/reason-language-server'
 
 let g:ale_linters = {
   \ 'javascript': ['eslint', 'flow'],

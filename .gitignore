@@ -1,2 +1,3 @@
-plugs
+dotfiles/vim/plugs
+dotfiles/vim/autoload/
 tags
