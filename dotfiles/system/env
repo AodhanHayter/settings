@@ -59,3 +59,6 @@ if [[ ! -d "$TMPDIR" ]]; then
 fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
+
+# iex (Elixir repl) config
+export ERL_AFLAGS="-kernal shell_history enabled"

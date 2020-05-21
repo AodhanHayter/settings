@@ -279,6 +279,7 @@ let g:ale_javascript_prettier_options = '--prose-wrap always'
 
 let g:ale_fixers = {
   \ 'html': ['prettier'],
+  \ 'css': ['prettier'],
   \ 'javascript': ['prettier'],
   \ 'reason': ['refmt'],
   \ 'json': ['prettier'],
@@ -286,7 +287,8 @@ let g:ale_fixers = {
   \ 'markdown': ['prettier'],
   \ 'typescript': ['prettier', 'tslint'],
   \ 'sh': ['shfmt -i 2'],
-  \ 'purescript': ['purty']
+  \ 'purescript': ['purty'],
+  \ 'elixir': ['mix_format']
   \}
 
 " Vim Flow
