@@ -289,7 +289,8 @@ let g:ale_fixers = {
   \ 'typescriptreact': ['prettier'],
   \ 'sh': ['shfmt -i 2'],
   \ 'purescript': ['purty'],
-  \ 'elixir': ['mix_format']
+  \ 'elixir': ['mix_format'],
+  \ 'sql': ['pgformatter']
   \}
 
 " Vim Flow
