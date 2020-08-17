@@ -1,4 +1,4 @@
-#!/user/bin/env zsh
+#!/usr/bin/env zsh
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
