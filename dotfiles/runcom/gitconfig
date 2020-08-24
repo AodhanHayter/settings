@@ -64,3 +64,5 @@
   fsckobjects = false
 [rerere]
   enabled = true
+[pull]
+	rebase = true

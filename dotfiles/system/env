@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 
 # This file is sourced from ../runcom/zshenv
-
 # pass
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 export PASSWORD_STORE_EXTENSIONS_DIR=/usr/local/lib/password-store/extensions
@@ -62,3 +61,6 @@ TMPPREFIX="${TMPDIR%/}/zsh"
 
 # iex (Elixir repl) config
 export ERL_AFLAGS="-kernal shell_history enabled"
+
+# conjur
+export CONJURRC="/Users/ahayter/.conjurrc"

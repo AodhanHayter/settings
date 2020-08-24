@@ -111,6 +111,10 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
+" Python Completion
+"""
+Plug 'deoplete-plugins/deoplete-jedi'
+
 " Javascript Completion
 """
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
@@ -165,7 +169,7 @@ Plug 'craigemery/vim-autotag'
 
 " Markdown
 """"""""""
-Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app & yarn install' }
+Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app & npm install' }
 
 " Themes
 """"""""
@@ -180,7 +184,14 @@ colorscheme nova
 
 " vim-javascript
 """"""""""""""""
+"
+" vim-autotag settings
+""""""""""""""""""""""
+let g:autotagStartMethod='fork'
 
+" vim-gitgutter settings
+""""""""""""""""""""""""
+highlight clear SignColumn
 " elm-vim
 """""""""
 let g:elm_format_autosave = 1
@@ -237,18 +248,18 @@ let g:autotagTagsFile='tags'
 
 " deoplete
 """
-let g:LanguageClient_serverCommands = {
-  \ 'reason': ['/usr/local/bin/reason-language-server'],
-  \ }
+" let g:LanguageClient_serverCommands = {
+"   \ 'reason': ['/usr/local/bin/reason-language-server'],
+"   \ }
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#ternjs#types = 1
 
-call deoplete#custom#source('ale', 'rank', 999)
+" call deoplete#custom#source('ale', 'rank', 999)
 
 " ReasonML
 """
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-execute "set rtp+=" . g:opamshare . "/merlin/vim"
+" let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+" execute "set rtp+=" . g:opamshare . "/merlin/vim"
 
 " ALE
 """""

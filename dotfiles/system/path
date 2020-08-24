@@ -10,6 +10,7 @@ $HOME/.cargo/bin
 $HOME/.fnm
 $HOME/.yarn/bin
 $HOME/.config/yarn/global/node_modules/.bin
+$HOME/Library/Python/2.7/bin
 )
 
 # Ensure path arrays do not contain duplicates
