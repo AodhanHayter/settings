@@ -21,7 +21,7 @@
   followTags = true
 [core]
   editor = vim
-  excludesfile = /Users/Aodhan/.global_ignore
+  excludesfile = ~/.global_ignore
 [log]
   date = relative
 [help]
