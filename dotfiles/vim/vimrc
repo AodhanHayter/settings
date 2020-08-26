@@ -114,6 +114,7 @@ endif
 " Python Completion
 """
 Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'davidhalter/jedi-vim'
 
 " Javascript Completion
 """
@@ -254,6 +255,14 @@ let g:autotagTagsFile='tags'
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#ternjs#types = 1
 
+" jedi-vim
+""""""""""
+let g:jedi#completions_enabled = 0
+let g:jedi#goto_command = "<leader>jd"
+let g:jedi#goto_assignments_command = "<leader>jg"
+let g:jedi#goto_stubs_command = "<leader>js"
+let g:jedi#goto_definitions_command = ""
+
 " call deoplete#custom#source('ale', 'rank', 999)
 
 " ReasonML
@@ -380,15 +389,3 @@ function! LightLineFilename()
     \ ('' != LightLineModified() ? ' ' . LightLineModified() : '') .
     \ ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '')
 endfunction
-
-" python with virtualenv support
-py3 << EOF
-import os
-
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_path = os.path.join(project_base_dir, 'bin/activate_this.py')
-  globals = {"__file__": activate_path}
-  with open(activate_path, 'rb') as f:
-    exec(compile(f.read(), activate_path, 'exec'), globals)
-EOF

@@ -47,3 +47,12 @@ function tm() {
   fi
   session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) &&  tmux $change -t "$session" || echo "No sessions found."
 }
+
+# Easily connect to postgress instances with pg_service.conf
+function pg() {
+  if [ $1 ]; then
+    PGSERVICE=$1 psql
+  else
+    echo 'A valid service name is required for this function'
+  fi
+}
