@@ -8,3 +8,30 @@ function pytags() {
   ctags -R --fields=+l --languages=python -f ./tags \
     $(python -c "import os, sys; print(' '.join('{}'.format(d) for d in sys.path if os.path.isdir(d)))") .
 }
+
+# Run this to refresh the current virtualenv, preserving your postactivate hook
+function venv_refresh() {
+  VENV=$(basename $VIRTUAL_ENV)
+  cp -v "${VIRTUAL_ENV}/bin/postactivate" "/tmp/${VENV}_postactivate"
+  deactivate
+  rmvirtualenv $VENV
+  mkvirtualenv $VENV
+  workon $VENV
+  cp -v "/tmp/${VENV}_postactivate" "${VIRTUAL_ENV}/bin/postactivate"
+  pip install -r requirements.txt
+  pip install -r requirements-test.txt || true
+  python setup.py develop || true
+  echo "virtualenv refreshed: ${VIRTUAL_ENV}" || echo
+}
+
+# Run this to generate a new requirements.txt.candidate from requirements-minimal.txt
+function requirements_minimal() {
+  VENV=$(basename $VIRTUAL_ENV)
+  mkvirtualenv --clear $VENV
+  pip install -r requirements-minimal.txt
+  echo "--index-url https://pypi.kyruus.com/simple" > requirements.txt.candidate
+  echo "" >> requirements.txt.candidate
+  pip freeze | sort >> requirements.txt.candidate
+  pip install -r requirements-test.txt || true
+  echo "virtualenv refreshed: $VIRTUAL_ENV" || echo
+}

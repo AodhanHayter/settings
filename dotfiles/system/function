@@ -51,8 +51,12 @@ function tm() {
 # Easily connect to postgress instances with pg_service.conf
 function pg() {
   if [ $1 ]; then
-    PGSERVICE=$1 psql
+    PGSERVICE=$1 pgcli
   else
     echo 'A valid service name is required for this function'
   fi
+}
+
+function aws_login() {
+  saml2aws login --session-duration 43200 --username ahayter@kyruus.com --duo-mfa-option="Duo Push" --skip-prompt
 }
