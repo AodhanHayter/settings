@@ -43,5 +43,12 @@ zplug "modules/syntax-highlighting", from:prezto, defer:2
 zplug "lukechilds/zsh-better-npm-completion", defer:2
 zplug "modules/history-substring-search", from:prezto, defer:3
 
+if ! zplug check --verbose; then
+  printf "Install zplug modules? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  fi
+fi
+
 zplug load
 
