@@ -66,3 +66,5 @@
   enabled = true
 [pull]
 	rebase = true
+[maintenance]
+	repo = /Users/ahayter/development/kyruus/entity_admin

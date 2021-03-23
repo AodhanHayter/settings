@@ -250,7 +250,7 @@ map <leader>cf :CocFix<CR>
 """""
 map <leader>af :ALEFix<CR>
 map <leader>an :ALENext<CR>
-map <leader>ag :ALEGoToDefinition<CR>
+nmap <silent> <leader>ag <Plug>(coc-definition)
 
 let g:ale_completion_enabled = 1
 let g:ale_reason_ls_executable = '/usr/local/bin/reason-language-server'
