@@ -12,6 +12,8 @@ set encoding=utf-8
 set clipboard=unnamed
 set backupcopy=yes
 set colorcolumn=100
+set cmdheight=2
+set signcolumn=number
 set number
 set relativenumber
 set noshowmode
@@ -38,7 +40,7 @@ set history=100
 
 set hlsearch " search highlight found words
 set showmatch " show matching parens
-set listchars=trail:·,tab:>-
+set listchars=trail:·
 set list
 
 " persistent undo
@@ -154,9 +156,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'eraserhd/parinfer-rust', { 'for': 'racket', 'do': 'cargo build --release' }
 Plug 'jpalardy/vim-slime'
 
-" Tag files
-Plug 'craigemery/vim-autotag'
-
 " Markdown
 """"""""""
 Plug 'iamcco/markdown-preview.nvim', { 'for': 'markdown', 'do': 'cd app & npm install' }
@@ -172,16 +171,10 @@ call plug#end()
 """""""
 colorscheme nova
 
-" vim-javascript
-""""""""""""""""
-"
-" vim-autotag settings
-""""""""""""""""""""""
-let g:autotagStartMethod='fork'
-
 " vim-gitgutter settings
 """"""""""""""""""""""""
 highlight clear SignColumn
+
 " elm-vim
 """""""""
 let g:elm_format_autosave = 1
@@ -205,9 +198,22 @@ nmap ga <Plug>(EasyAlign)
 " fzf
 """""
 " search files
-map <leader>t :Files<CR>
+nmap <leader>t :Files<CR>
+
 " search open buffers
-map <leader>b :Buffers<CR>
+nmap <leader>b :Buffers<CR>
+
+" search commits
+"" for buffer
+nmap <leader>gc :BCommits<CR>
+"" for projection
+nmap <leader>gC :Commits<CR>
+
+" search project files for a pattern
+nmap <leader>s :Find<Space>
+
+" search command history
+nmap <leader>h :History:<CR>
 
 " Match theme colors
 let g:fzf_colors =
@@ -233,30 +239,27 @@ command! -bang -nargs=? -complete=dir Files
 command! -bang -nargs=* Find
   \ call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --glob "!tags" --glob "!build" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 
-" auto-tags
-let g:autotagTagsFile='tags'
-
-" ReasonML
-"""
-" let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-" execute "set rtp+=" . g:opamshare . "/merlin/vim"
-"
-
 " Coc
 """""
-map <leader>cf :CocFix<CR>
+nmap <leader>cf :CocFix<CR>
+nmap <silent> <leader>gd <Plug>(coc-definition)
+nmap <silent> <leader>gt <Plug>(coc-type-definition)
+nmap <silent> <leader>gr <Plug>(coc-references)
+nmap <silent> <leader>gi <Plug>(coc-implementation)
+nmap <leader>rn <Plug>(coc-rename)
+
+command! -nargs=0 Format :call CocAction('format')
+nmap <leader>af :Format<CR>
 
 " ALE
 """""
-map <leader>af :ALEFix<CR>
-map <leader>an :ALENext<CR>
-nmap <silent> <leader>ag <Plug>(coc-definition)
+" nmap <leader>af :ALEFix<CR>
+nmap <leader>an :ALENext<CR>
 
-let g:ale_completion_enabled = 1
-let g:ale_reason_ls_executable = '/usr/local/bin/reason-language-server'
+let g:ale_completion_enabled = 0
 
 let g:ale_linters = {
-  \ 'javascript': ['eslint', 'flow'],
+  \ 'javascript': ['eslint'],
   \ 'reason': ['reason-language-server'],
   \ 'typescript': ['tsserver', 'eslint'],
   \ 'elixir': ['credo'],
@@ -288,11 +291,6 @@ let g:ale_fixers = {
   \ 'elixir': ['mix_format'],
   \ 'sql': ['pgformatter']
   \}
-
-" Vim Flow
-""""""""""
-let g:flow#autoclose = 1
-let g:flow#enable = 0
 
 " nerd-tree
 """""""""""
