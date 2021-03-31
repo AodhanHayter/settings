@@ -67,10 +67,6 @@ map <leader>co :set cursorcolumn!<CR>
 " find word under cursor
 map <leader>f :Find <C-R><C-W><CR>
 
-" use escape to remove highlight from search
-""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
-nnoremap <esc>^[ <esc>^[
 
 " keep selected text selected when fixing indentation
 """""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -122,6 +118,7 @@ Plug 'itchyny/lightline.vim'
 " Fuzzy Search
 """"""""""""""
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-slash'
 
 " Movement Helpers
 """"""""""""""""""
@@ -135,6 +132,7 @@ Plug 'Traap/vim-dragvisuals'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
+Plug 'junegunn/gv.vim'
 
 " Quick insert helpers
 """""""""""""""
@@ -182,13 +180,18 @@ let g:elm_format_autosave = 1
 " markdown-preview
 let g:mkdp_auto_close = 0
 
+" vim-slash
+noremap <plug>(slash-after) zz
+if has('timers')
+  noremap <expr> <plug>(slash-after) slash#blink(3, 100)
+endif
+
 " Easy Motion
 """""""""""""
 nmap F <Plug>(easymotion-prefix)s
 
 " Easy Align
 """"""""""""
-
 "Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 
@@ -210,10 +213,10 @@ nmap <leader>gc :BCommits<CR>
 nmap <leader>gC :Commits<CR>
 
 " search project files for a pattern
-nmap <leader>s :Find<Space>
+nmap <leader>s :Find<CR>
 
 " search command history
-nmap <leader>h :History:<CR>
+nmap <leader>H :History:<CR>
 
 " Match theme colors
 let g:fzf_colors =
