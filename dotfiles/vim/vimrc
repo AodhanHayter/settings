@@ -250,6 +250,7 @@ nmap <silent> <leader>gt <Plug>(coc-type-definition)
 nmap <silent> <leader>gr <Plug>(coc-references)
 nmap <silent> <leader>gi <Plug>(coc-implementation)
 nmap <leader>rn <Plug>(coc-rename)
+nnoremap <silent> <leader>st :call CocAction('doHover')<CR>
 
 command! -nargs=0 Format :call CocAction('format')
 nmap <leader>af :Format<CR>
