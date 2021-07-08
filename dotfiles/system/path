@@ -6,6 +6,7 @@
 path=(
 $path
 /usr/local/sbin
+$HOME/.pyenv
 $HOME/.cargo/bin
 $HOME/.fnm
 $HOME/.yarn/bin

@@ -66,4 +66,3 @@ export ERL_AFLAGS="-kernal shell_history enabled"
 export CONJURRC="/Users/ahayter/.conjurrc"
 
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
