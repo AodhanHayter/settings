@@ -5,13 +5,12 @@
 # Setup path
 path=(
 $path
-/usr/local/sbin
 $HOME/.pyenv
+/usr/local/sbin
 $HOME/.cargo/bin
 $HOME/.fnm
 $HOME/.yarn/bin
 $HOME/.config/yarn/global/node_modules/.bin
-$HOME/Library/Python/2.7/bin
 )
 
 # Ensure path arrays do not contain duplicates

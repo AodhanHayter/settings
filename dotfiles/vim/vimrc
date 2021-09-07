@@ -13,7 +13,6 @@ set clipboard=unnamed
 set backupcopy=yes
 set colorcolumn=100
 set cmdheight=2
-set signcolumn=number
 set number
 set relativenumber
 set noshowmode
@@ -267,7 +266,7 @@ let g:ale_linters = {
   \ 'reason': ['reason-language-server'],
   \ 'typescript': ['tsserver', 'eslint'],
   \ 'elixir': ['credo'],
-  \ 'python': ['flake8'],
+  \ 'python': [],
   \ 'elm': ['elm-make'],
   \ 'sh': ['shellcheck']
   \}
