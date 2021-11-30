@@ -7,11 +7,8 @@ scriptencoding utf-8
 syntax on
 
 let python_highlight_all=1
-set term=xterm-256color
-set encoding=utf-8
 set clipboard=unnamed
-set backupcopy=yes
-set colorcolumn=100
+set colorcolumn=120
 set cmdheight=2
 set number
 set relativenumber
@@ -125,7 +122,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'easymotion/vim-easymotion'
 Plug 'tmhedberg/matchit'
 Plug 'Traap/vim-dragvisuals'
-
 " Git Helpers
 """""""""""""
 Plug 'airblade/vim-gitgutter'
@@ -170,7 +166,7 @@ colorscheme nova
 
 " vim-gitgutter settings
 """"""""""""""""""""""""
-highlight clear SignColumn
+"highlight clear SignColumn
 
 " elm-vim
 """""""""
