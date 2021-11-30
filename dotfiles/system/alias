@@ -2,6 +2,7 @@
 
 # This file is sourced from ../runcom/zshrc
 
+alias vim='nvim'
 alias ll='exa -lbhg'
 alias cat='bat'
 alias ping='prettyping --nolegend'
