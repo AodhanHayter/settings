@@ -4,15 +4,19 @@ if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
+vim.cmd [[packadd packer.nvim]]
+
 return require('packer').startup(function(use)
   -- My plugins here
   -------------------
 
   -- colorscheme
-  use {}
   use {
     'trevordmiller/nova-vim',
-    config = function() vim.cmd('highlight clear SignColumn') end
+    config = function()
+	vim.cmd('colorscheme nova')
+    	vim.cmd('highlight clear SignColumn')
+end
   }
 
   use {
@@ -30,13 +34,16 @@ return require('packer').startup(function(use)
     config = function() require('colorizer').setup({}) end
   }
 
+  -- buffer search
+  use 'junegunn/vim-slash'
+
   -- syntax
   use {'sheerun/vim-polyglot'}
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    branch = '0.5-compat',
-    run = ':TSUpdate'
-  }
+  -- use {
+  --   'nvim-treesitter/nvim-treesitter',
+  --   branch = '0.5-compat',
+  --   run = ':TSUpdate'
+  -- }
 
   use {
     'windwp/nvim-autopairs',
@@ -83,8 +90,13 @@ return require('packer').startup(function(use)
   -- markdown
   use 'ellisonleao/glow.nvim'
 
- -- language server
+
+ -- R
+ use { 'jalvesaq/Nvim-R', branch = 'stable' }
+
+   -- } language server
  use { 'neoclide/coc.nvim', branch = 'release'}
+
  -- use {
  --   'folke/lsp-colors.nvim',
  --    config = function() require('lsp-colors').setup({

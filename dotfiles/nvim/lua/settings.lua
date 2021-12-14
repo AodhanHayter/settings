@@ -1,10 +1,15 @@
 local o = vim.o
+local opt = vim.opt
 local wo = vim.wo
 local bo = vim.bo
 local cmd = vim.cmd
 
 
+
+
+
 -- global options
+o.termguicolors = true
 o.guicursor = 'i-ci-ve:hor100'
 o.path = o.path .. ',**'
 o.cmdheight = 2
@@ -14,18 +19,21 @@ o.mouse = 'a'
 o.updatetime = 300
 o.showmatch = true
 o.clipboard = 'unnamedplus'
-vim.opt.shortmess = vim.opt.shortmess + { ['c'] = true }
-
-
+opt.shortmess = opt.shortmess + { ['c'] = true }
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.expandtab = true
+opt.smartindent = true
+opt.autoindent = true
+opt.undofile = true
+opt.listchars = { tab = '>~', trail = '·'}
 
 -- window-local options
 wo.number = true
 wo.relativenumber = true
 wo.wrap = false
 wo.list = true
-wo.listchars = 'trail:·'
 wo.signcolumn = 'auto:2'
-
 
 -- buffer-local options
 bo.tabstop = 2
@@ -34,6 +42,8 @@ bo.expandtab = true
 bo.smartindent = true
 bo.autoindent = true
 bo.undofile = true
+
+cmd('syntax enable')
 
 
 -- autocmds
@@ -51,9 +61,6 @@ cmd([[
 
 -- globals
 -----------
-
--- theme
-vim.g.colors_name = 'nova'
 
 -- autocomplete
 -- vim.g.coq_settings = {
