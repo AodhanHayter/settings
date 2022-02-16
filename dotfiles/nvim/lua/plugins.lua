@@ -14,9 +14,9 @@ return require('packer').startup(function(use)
   use {
     'trevordmiller/nova-vim',
     config = function()
-	vim.cmd('colorscheme nova')
-    	vim.cmd('highlight clear SignColumn')
-end
+      vim.cmd('colorscheme nova')
+      vim.cmd('highlight clear SignColumn')
+    end
   }
 
   use {

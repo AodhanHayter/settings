@@ -2,3 +2,4 @@ dotfiles/vim/plugs
 dotfiles/vim/autoload/
 dotfiles/nvim/plugin/
 tags
+.DS_Store

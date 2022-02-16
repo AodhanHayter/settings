@@ -4,10 +4,6 @@ local wo = vim.wo
 local bo = vim.bo
 local cmd = vim.cmd
 
-
-
-
-
 -- global options
 o.termguicolors = true
 o.guicursor = 'i-ci-ve:hor100'
