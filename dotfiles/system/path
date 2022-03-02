@@ -5,7 +5,6 @@
 # Setup path
 path=(
 $path
-$HOME/.pyenv
 /usr/local/sbin
 $HOME/.local/bin
 $HOME/.cargo/bin

@@ -17,28 +17,6 @@ function randomness() {
   export RANDOMNESS=$(openssl rand -base64 10)
 }
 
-function mux_portal() {
-  local PORTAL_DIR=$HOME/development/pp/portal
-
-  tmux start-server
-  tmux new-session -d -c $PORTAL_DIR -s portal -n web
-  tmux new-window -t portal:2 -c $PORTAL_DIR -n server
-
-  tmux select-window -t portal:1
-  tmux attach-session -t portal
-}
-
-function mux_frontend_course() {
-  local PROJECT_DIR=$HOME/development/boomcamp/frontend-course
-
-  tmux start-server
-  tmux new-session -d -c $PROJECT_DIR -s fr-course -n code
-  tmux new-window -t fr-course:2 $PROJECT_DIR -n term
-
-  tmux select-window -t fr-course:1
-  tmux attach-session -t fr-course
-}
-
 # Switch and create tmux sessions from inside of other sessions
 function tm() {
   [[ -n "$TMUX" ]] && change="switch-client" || change="attach-session"

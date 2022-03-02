@@ -34,12 +34,5 @@ for DOTFILE in "$DOTFILES_DIR"/system/{env,path}; do
   [ -f "$DOTFILE" ] && . "$DOTFILE"
 done
 
-# pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init --path)"
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
-fi
-
 # Export
 export OS DOTFILES_DIR
