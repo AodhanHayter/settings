@@ -15,6 +15,7 @@ o.mouse = 'a'
 o.updatetime = 300
 o.showmatch = true
 o.clipboard = 'unnamedplus'
+opt.shell = '/bin/bash'
 opt.shortmess = opt.shortmess + { ['c'] = true }
 opt.tabstop = 2
 opt.shiftwidth = 2
